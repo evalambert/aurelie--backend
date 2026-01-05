@@ -437,6 +437,8 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::oembed.oembed'>;
     year: Schema.Attribute.Integer;
   };
 }
@@ -512,6 +514,35 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     medium: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSliderLandscapeSliderLandscape
+  extends Struct.SingleTypeSchema {
+  collectionName: 'slider_landscapes';
+  info: {
+    displayName: 'SliderLandscape';
+    pluralName: 'slider-landscapes';
+    singularName: 'slider-landscape';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slider-landscape.slider-landscape'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slideLandscape: Schema.Attribute.Component<'media.slide-landscape', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1031,6 +1062,7 @@ declare module '@strapi/strapi' {
       'api::atlas.atlas': ApiAtlasAtlas;
       'api::exhibition.exhibition': ApiExhibitionExhibition;
       'api::medium.medium': ApiMediumMedium;
+      'api::slider-landscape.slider-landscape': ApiSliderLandscapeSliderLandscape;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

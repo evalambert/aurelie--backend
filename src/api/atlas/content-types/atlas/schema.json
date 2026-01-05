@@ -70,6 +70,10 @@
       "relation": "manyToMany",
       "target": "api::atlas.atlas",
       "mappedBy": "parents"
+    },
+    "video": {
+      "type": "customField",
+      "customField": "plugin::oembed.oembed"
     }
   }
 }

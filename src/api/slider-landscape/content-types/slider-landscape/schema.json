@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "slider_landscapes",
+  "info": {
+    "singularName": "slider-landscape",
+    "pluralName": "slider-landscapes",
+    "displayName": "SliderLandscape"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slideLandscape": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.slide-landscape"
+    }
+  }
+}
