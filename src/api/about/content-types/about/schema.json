@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "year": {
+      "type": "integer"
+    }
+  }
+}

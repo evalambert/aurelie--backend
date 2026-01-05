@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exhibitions",
+  "info": {
+    "singularName": "exhibition",
+    "pluralName": "exhibitions",
+    "displayName": "Exhibition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "year": {
+      "type": "integer"
+    },
+    "startingDate": {
+      "type": "date"
+    },
+    "endingDate": {
+      "type": "date"
+    },
+    "place": {
+      "type": "string"
+    },
+    "structure": {
+      "type": "string"
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "curator": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "contributionFields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text.group-field"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "exhibitionView": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "atlasRelation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::atlas.atlas",
+      "mappedBy": "exhibition"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

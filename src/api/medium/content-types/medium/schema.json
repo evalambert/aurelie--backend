@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mediums",
+  "info": {
+    "singularName": "medium",
+    "pluralName": "mediums",
+    "displayName": "Medium"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "medium": {
+      "type": "string"
+    },
+    "atlas": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::atlas.atlas",
+      "inversedBy": "medium"
+    }
+  }
+}
