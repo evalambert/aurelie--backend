@@ -36,17 +36,6 @@
     "year": {
       "type": "integer"
     },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "exhibition": {
       "type": "relation",
       "relation": "manyToOne",
@@ -76,9 +65,20 @@
       "customField": "plugin::oembed.oembed"
     },
     "shortVideo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files",
         "videos"
+      ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
       ],
       "type": "media",
       "multiple": false
