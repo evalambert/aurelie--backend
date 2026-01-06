@@ -427,9 +427,12 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::atlas.atlas'> &
       Schema.Attribute.Private;
     medium: Schema.Attribute.Relation<'oneToOne', 'api::medium.medium'>;
+    oembedVideo: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::oembed.oembed'>;
     origin: Schema.Attribute.String;
     parents: Schema.Attribute.Relation<'manyToMany', 'api::atlas.atlas'>;
     publishedAt: Schema.Attribute.DateTime;
+    shortVideo: Schema.Attribute.Media<'files' | 'videos'>;
     siblings: Schema.Attribute.Relation<'manyToMany', 'api::atlas.atlas'>;
     slug: Schema.Attribute.UID<'title'>;
     technique: Schema.Attribute.String;
@@ -437,8 +440,6 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<'plugin::oembed.oembed'>;
     year: Schema.Attribute.Integer;
   };
 }

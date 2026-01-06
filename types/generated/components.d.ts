@@ -3,13 +3,12 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface MediaSlideLandscape extends Struct.ComponentSchema {
   collectionName: 'components_media_slide_landscapes';
   info: {
+    description: '';
     displayName: 'SlideLandscape';
   };
   attributes: {
-    background: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    background: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    cover: Schema.Attribute.Media<'videos' | 'images'>;
     title: Schema.Attribute.Text;
   };
 }

@@ -71,9 +71,17 @@
       "target": "api::atlas.atlas",
       "mappedBy": "parents"
     },
-    "video": {
+    "oembedVideo": {
       "type": "customField",
       "customField": "plugin::oembed.oembed"
+    },
+    "shortVideo": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

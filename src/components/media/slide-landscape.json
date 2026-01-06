@@ -1,7 +1,8 @@
 {
   "collectionName": "components_media_slide_landscapes",
   "info": {
-    "displayName": "SlideLandscape"
+    "displayName": "SlideLandscape",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,24 +10,23 @@
       "type": "text"
     },
     "cover": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos",
+        "images"
+      ]
     },
     "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+        "videos"
+      ]
     }
   }
 }
