@@ -34,7 +34,7 @@
       "type": "string"
     },
     "year": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "exhibition": {
       "type": "relation",
@@ -74,14 +74,15 @@
       ]
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

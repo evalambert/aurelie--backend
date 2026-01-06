@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exhibition",
     "pluralName": "exhibitions",
-    "displayName": "Exhibition"
+    "displayName": "Exhibition",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +17,7 @@
   },
   "attributes": {
     "year": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "startingDate": {
       "type": "date"
@@ -49,14 +50,15 @@
       "targetField": "title"
     },
     "exhibitionView": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "copyright": {
       "type": "string"
