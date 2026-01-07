@@ -9,6 +9,9 @@ export interface MediaSlideLandscape extends Struct.ComponentSchema {
   attributes: {
     background: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     cover: Schema.Attribute.Media<'videos' | 'images'>;
+    coverVideo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     title: Schema.Attribute.Text;
   };
 }
