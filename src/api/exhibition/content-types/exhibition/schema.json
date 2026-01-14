@@ -4,7 +4,7 @@
   "info": {
     "singularName": "exhibition",
     "pluralName": "exhibitions",
-    "displayName": "Exhibition",
+    "displayName": "Exposition",
     "description": ""
   },
   "options": {
@@ -47,7 +47,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "exhibitionView": {
       "type": "media",

@@ -4,20 +4,25 @@
   "info": {
     "singularName": "medium",
     "pluralName": "mediums",
-    "displayName": "Medium"
+    "displayName": "Catégorie",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "medium": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "atlas": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::atlas.atlas",
       "inversedBy": "medium"
+    },
+    "index": {
+      "type": "biginteger"
     }
   }
 }

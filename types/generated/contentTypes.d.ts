@@ -446,7 +446,7 @@ export interface ApiExhibitionExhibition extends Struct.CollectionTypeSchema {
   collectionName: 'exhibitions';
   info: {
     description: '';
-    displayName: 'Exhibition';
+    displayName: 'Exposition';
     pluralName: 'exhibitions';
     singularName: 'exhibition';
   };
@@ -480,7 +480,7 @@ export interface ApiExhibitionExhibition extends Struct.CollectionTypeSchema {
     >;
     place: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     startingDate: Schema.Attribute.Date;
     structure: Schema.Attribute.String;
     text: Schema.Attribute.Blocks;
@@ -495,7 +495,8 @@ export interface ApiExhibitionExhibition extends Struct.CollectionTypeSchema {
 export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
   collectionName: 'mediums';
   info: {
-    displayName: 'Medium';
+    description: '';
+    displayName: 'Cat\u00E9gorie';
     pluralName: 'mediums';
     singularName: 'medium';
   };
@@ -507,13 +508,14 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    index: Schema.Attribute.BigInteger;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::medium.medium'
     > &
       Schema.Attribute.Private;
-    medium: Schema.Attribute.String;
+    medium: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
