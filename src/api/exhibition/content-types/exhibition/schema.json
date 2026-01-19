@@ -26,7 +26,12 @@
       "type": "date"
     },
     "place": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "structure": {
       "type": "string"
@@ -43,12 +48,22 @@
       "type": "string"
     },
     "link": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "contributionFields": {
       "type": "component",
       "repeatable": true,
-      "component": "text.group-field"
+      "component": "text.group-field",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid",
