@@ -19,8 +19,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::atlas.atlas",
-      "inversedBy": "medium",
-      "required": true
+      "inversedBy": "medium"
     },
     "index": {
       "type": "biginteger"
