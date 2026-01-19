@@ -32,7 +32,12 @@
       "type": "string"
     },
     "text": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "curator": {
       "type": "string"

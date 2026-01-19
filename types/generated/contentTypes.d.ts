@@ -434,6 +434,10 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
     siblings: Schema.Attribute.Relation<'manyToMany', 'api::atlas.atlas'>;
     slug: Schema.Attribute.UID<'title'>;
     technique: Schema.Attribute.String;
+    territory: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::territory.territory'
+    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -483,7 +487,12 @@ export interface ApiExhibitionExhibition extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     startingDate: Schema.Attribute.Date;
     structure: Schema.Attribute.String;
-    text: Schema.Attribute.Blocks;
+    text: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -496,7 +505,7 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
   collectionName: 'mediums';
   info: {
     description: '';
-    displayName: 'Cat\u00E9gorie';
+    displayName: 'Support';
     pluralName: 'mediums';
     singularName: 'medium';
   };
@@ -546,6 +555,37 @@ export interface ApiSliderLandscapeSliderLandscape
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slideLandscape: Schema.Attribute.Component<'media.slide-landscape', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTerritoryTerritory extends Struct.CollectionTypeSchema {
+  collectionName: 'territories';
+  info: {
+    description: '';
+    displayName: 'Territoire';
+    pluralName: 'territories';
+    singularName: 'territory';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    atlas: Schema.Attribute.Relation<'oneToOne', 'api::atlas.atlas'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    index: Schema.Attribute.BigInteger;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::territory.territory'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    territory: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1066,6 +1106,7 @@ declare module '@strapi/strapi' {
       'api::exhibition.exhibition': ApiExhibitionExhibition;
       'api::medium.medium': ApiMediumMedium;
       'api::slider-landscape.slider-landscape': ApiSliderLandscapeSliderLandscape;
+      'api::territory.territory': ApiTerritoryTerritory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -83,6 +83,12 @@
         "videos",
         "audios"
       ]
+    },
+    "territory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::territory.territory",
+      "mappedBy": "atlas"
     }
   }
 }

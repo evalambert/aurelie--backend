@@ -1,28 +1,27 @@
 {
   "kind": "collectionType",
-  "collectionName": "mediums",
+  "collectionName": "territories",
   "info": {
-    "singularName": "medium",
-    "pluralName": "mediums",
-    "displayName": "Support",
+    "singularName": "territory",
+    "pluralName": "territories",
+    "displayName": "Territoire",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "medium": {
-      "type": "string",
-      "required": true
+    "territory": {
+      "type": "string"
+    },
+    "index": {
+      "type": "biginteger"
     },
     "atlas": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::atlas.atlas",
-      "inversedBy": "medium"
-    },
-    "index": {
-      "type": "biginteger"
+      "inversedBy": "territory"
     }
   }
 }
