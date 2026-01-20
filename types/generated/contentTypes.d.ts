@@ -373,7 +373,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: '';
-    displayName: 'About';
+    displayName: '\u00C0 propos';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -544,7 +544,7 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
   collectionName: 'mediums';
   info: {
     description: '';
-    displayName: 'Support';
+    displayName: 'Atlas - Support ';
     pluralName: 'mediums';
     singularName: 'medium';
   };
@@ -552,8 +552,7 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    atlas: Schema.Attribute.Relation<'oneToOne', 'api::atlas.atlas'> &
-      Schema.Attribute.Required;
+    atlas: Schema.Attribute.Relation<'oneToOne', 'api::atlas.atlas'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -576,7 +575,8 @@ export interface ApiSliderLandscapeSliderLandscape
   extends Struct.SingleTypeSchema {
   collectionName: 'slider_landscapes';
   info: {
-    displayName: 'SliderLandscape';
+    description: '';
+    displayName: 'Paysage';
     pluralName: 'slider-landscapes';
     singularName: 'slider-landscape';
   };
@@ -605,7 +605,7 @@ export interface ApiTerritoryTerritory extends Struct.CollectionTypeSchema {
   collectionName: 'territories';
   info: {
     description: '';
-    displayName: 'Territoire';
+    displayName: 'Atlas - Territoire';
     pluralName: 'territories';
     singularName: 'territory';
   };

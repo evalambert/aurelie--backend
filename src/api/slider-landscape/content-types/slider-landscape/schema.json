@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slider-landscape",
     "pluralName": "slider-landscapes",
-    "displayName": "SliderLandscape"
+    "displayName": "Paysage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
