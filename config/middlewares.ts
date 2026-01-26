@@ -31,6 +31,7 @@ export default [
             "res.cloudinary.com",
           ],
           upgradeInsecureRequests: null,
+          
         },
       },
     },
