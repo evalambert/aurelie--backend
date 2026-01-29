@@ -25,11 +25,11 @@
         }
       }
     },
-    "atlas": {
+    "atlases": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::atlas.atlas",
-      "inversedBy": "medium"
+      "mappedBy": "medium"
     },
     "index": {
       "type": "biginteger",

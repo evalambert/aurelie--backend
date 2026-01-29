@@ -82,12 +82,6 @@
       "target": "api::exhibition.exhibition",
       "inversedBy": "atlasRelation"
     },
-    "medium": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::medium.medium",
-      "mappedBy": "atlas"
-    },
     "parents": {
       "type": "relation",
       "relation": "manyToMany",
@@ -139,6 +133,12 @@
       "relation": "oneToOne",
       "target": "api::territory.territory",
       "mappedBy": "atlas"
+    },
+    "medium": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medium.medium",
+      "inversedBy": "atlases"
     }
   }
 }

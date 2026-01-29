@@ -472,7 +472,7 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::atlas.atlas'>;
-    medium: Schema.Attribute.Relation<'oneToOne', 'api::medium.medium'>;
+    medium: Schema.Attribute.Relation<'manyToOne', 'api::medium.medium'>;
     oembedVideo: Schema.Attribute.JSON &
       Schema.Attribute.CustomField<'plugin::oembed.oembed'>;
     origin: Schema.Attribute.String &
@@ -606,7 +606,7 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    atlas: Schema.Attribute.Relation<'oneToOne', 'api::atlas.atlas'>;
+    atlases: Schema.Attribute.Relation<'oneToMany', 'api::atlas.atlas'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
