@@ -100,20 +100,25 @@
     },
     "shortVideo": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "files",
         "videos"
-      ],
+      ]
+    },
+    "image": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
-    },
-    "image": {
-      "type": "media",
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
@@ -121,18 +126,13 @@
         "files",
         "videos",
         "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      ]
     },
     "territory": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::territory.territory",
-      "mappedBy": "atlas"
+      "inversedBy": "atlases"
     },
     "medium": {
       "type": "relation",

@@ -559,7 +559,7 @@ export interface ApiAtlasAtlas extends Struct.CollectionTypeSchema {
         };
       }>;
     territory: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::territory.territory'
     >;
     title: Schema.Attribute.String &
@@ -740,7 +740,7 @@ export interface ApiTerritoryTerritory extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    atlas: Schema.Attribute.Relation<'oneToOne', 'api::atlas.atlas'>;
+    atlases: Schema.Attribute.Relation<'oneToMany', 'api::atlas.atlas'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

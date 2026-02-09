@@ -32,11 +32,11 @@
         }
       }
     },
-    "atlas": {
+    "atlases": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::atlas.atlas",
-      "inversedBy": "territory"
+      "mappedBy": "territory"
     }
   }
 }
