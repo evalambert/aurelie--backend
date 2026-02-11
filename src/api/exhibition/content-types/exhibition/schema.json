@@ -17,10 +17,12 @@
   },
   "attributes": {
     "year": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "startingDate": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "endingDate": {
       "type": "date"
@@ -31,10 +33,12 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "structure": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "text": {
       "type": "blocks",
@@ -42,7 +46,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "curator": {
       "type": "string"
@@ -57,13 +62,13 @@
     },
     "contributionFields": {
       "type": "component",
-      "repeatable": true,
-      "component": "text.group-field",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "text.group-field",
+      "repeatable": true
     },
     "slug": {
       "type": "uid",
@@ -91,7 +96,8 @@
       "mappedBy": "exhibition"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "groupShow": {
       "type": "boolean"
