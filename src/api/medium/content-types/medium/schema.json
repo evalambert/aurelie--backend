@@ -4,7 +4,7 @@
   "info": {
     "singularName": "medium",
     "pluralName": "mediums",
-    "displayName": "Atlas - Support ",
+    "displayName": "Atlas - Filtre#1",
     "description": ""
   },
   "options": {
@@ -18,12 +18,12 @@
   "attributes": {
     "medium": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "atlases": {
       "type": "relation",

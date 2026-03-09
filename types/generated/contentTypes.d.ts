@@ -661,7 +661,7 @@ export interface ApiMediumMedium extends Struct.CollectionTypeSchema {
   collectionName: 'mediums';
   info: {
     description: '';
-    displayName: 'Atlas - Support ';
+    displayName: 'Atlas - Filtre#1';
     pluralName: 'mediums';
     singularName: 'medium';
   };
@@ -734,7 +734,7 @@ export interface ApiTerritoryTerritory extends Struct.CollectionTypeSchema {
   collectionName: 'territories';
   info: {
     description: '';
-    displayName: 'Atlas - Territoire';
+    displayName: 'Atlas - Filtre#2';
     pluralName: 'territories';
     singularName: 'territory';
   };
